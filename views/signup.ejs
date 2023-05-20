@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/style.css">
+<div class="cont">
+    <form action="/add/register" method="POST">
+        <div class="ln">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required class="inp" />
+        </div>
+        <br />
+        <div class="ln">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required class="inp" />
+        </div>
+        <br />
+        <div class="ln">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required class="inp" />
+        </div>
+        <br />
+        <input type="submit" value="Register" class="btn">
+        <br /><br />
+        <a href="/">Menu</a>
+    </form>
+</div>
+
+<div class="cont">
+    <div class="marc">
+        <ul>
+            <% login.forEach( logins=> { %>
+                <li>name: <%= logins.name %><br> email: <%= logins.email %><br> password: <%= logins.password %></li><br>
+                <a href="/delete/register/<%= logins._id %>" class="btnd">X</a><br><br>
+            <% }) %>
+        </ul>
+    </div>
+</div>
